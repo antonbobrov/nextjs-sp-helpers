@@ -1,0 +1,159 @@
+@import '../../settings';
+
+.#{$nkh-prefix}-rich-text-content {
+  &.#{$nkh-prefix}-is-overflow-text-hidden {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  * {
+    &:first-child {
+      margin-top: 0 !important;
+    }
+    
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  &__media {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-top: 56.25%;
+
+    video,
+    iframe {
+      appearance: none;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      border-radius: 0;
+      
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+
+  h1 {
+    font-family: inherit;
+    font-size: 2em;
+    font-weight: inherit;
+    text-transform: inherit;
+  }
+
+  h2 {
+    font-family: inherit;
+    font-size: 1.5em;
+    font-weight: inherit;
+    text-transform: inherit;
+  }
+
+  h3,
+  h4,
+  h5 {
+    font-family: inherit;
+    font-size: 1.25em;
+    font-weight: inherit;
+    text-transform: inherit;
+  }
+
+  ul,
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li + li {
+      margin-top: 1.25rem;
+    }
+  }
+
+  ul {
+    li {         
+      &::before {
+        content: '\2022';
+        color: currentColor;
+        font-weight: bold;
+        display: inline-block;
+        width: 1rem;
+      }
+    }
+  }
+
+  ol {
+    counter-reset: ol-counter;
+
+    li {
+      counter-increment: ol-counter;
+
+      &::before {
+        content: counter(ol-counter) '. ';
+        display: inline-block;
+        padding-right: 0.5rem;
+        color: currentColor;
+      }
+    }
+  }
+
+  .justifyleft {
+    text-align: left;
+  }
+  
+  .justifycenter {
+    text-align: center;
+  }
+
+  .justifyright {
+    text-align: right;
+  }
+
+  .justifyfull {
+    text-align: justify;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid currentColor;
+    border-collapse: collapse;
+  }
+
+  td {
+    padding: 0.5rem;
+  }
+
+  img {
+    &:not([width]),
+    &[width=''],
+    &:not([height]) {
+      width: 100%;
+    }
+  }
+
+  figure {
+    padding: 0;
+    margin: 0;
+  }
+}
