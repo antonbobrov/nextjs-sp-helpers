@@ -22,8 +22,7 @@
     "build:types": "tsc -p config/tsconfig.types.json && tsc-alias -p config/tsconfig.types.json",
     "build:styles": "copyfiles src/styles/**/*.scss lib/styles -u 2",
     "build:deploy": "gh-pages -d storybook-static",
-    "prepublishOnly": "run-s lint build",
-    "publish": "npm publish --access public"
+    "prepublishOnly": "run-s lint build"
   },
   "repository": {
     "type": "git",
