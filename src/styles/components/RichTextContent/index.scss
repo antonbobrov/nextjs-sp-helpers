@@ -1,23 +1,8 @@
 @import '../../settings';
 
 .#{$nkh-prefix}-rich-text-content {
-  &.#{$nkh-prefix}-is-overflow-text-hidden {
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  * {
-    &:first-child {
-      margin-top: 0 !important;
-    }
-    
-    &:last-child {
-      margin-bottom: 0 !important;
-    }
-  }
-
-  &__media {
+  &__iframe,
+  &__video {
     position: relative;
     display: block;
     width: 100%;
@@ -36,6 +21,22 @@
       left: 0;
       width: 100%;
       height: 100%;
+    }
+  }
+
+  &.#{$nkh-prefix}-is-overflow-text-hidden {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  * {
+    &:first-child {
+      margin-top: 0 !important;
+    }
+    
+    &:last-child {
+      margin-bottom: 0 !important;
     }
   }
 

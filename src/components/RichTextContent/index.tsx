@@ -3,7 +3,7 @@ import React, { forwardRef } from 'react';
 import { useForwardedRef } from '@anton.bobrov/react-hooks';
 import { prefixedClasNames } from '@utils/prefixedClassNames';
 import { TRichTextContentProps } from './types';
-import { useRichTextWrappedMedia } from './utils';
+import { useRichTextWrappedChildren } from './utils/useRichTextWrappedChildren';
 
 export const RichTextContent = forwardRef<
   HTMLDivElement,
@@ -19,7 +19,7 @@ export const RichTextContent = forwardRef<
     )
   );
 
-  const textProps = useRichTextWrappedMedia(props);
+  const textProps = useRichTextWrappedChildren(props);
 
   return (
     <div
